@@ -22,6 +22,11 @@ export default defineConfig({
       // ...patterns,
     },
   },
+  conditions: {
+    extend: {
+      children: '&>*',
+    },
+  },
 
   // The output directory for your css system
   outdir: 'styled-system',

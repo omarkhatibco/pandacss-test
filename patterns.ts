@@ -1,5 +1,4 @@
 import { definePattern } from '@pandacss/dev';
-
 const aspectRatio = definePattern({
   properties: {
     ratio: { type: 'number' },
@@ -13,17 +12,16 @@ const aspectRatio = definePattern({
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      _hover: {
-        backgroundColor: 'primary',
-      },
+      '--ratio': `${100 / ratio}%`,
+
       _before: {
         content: '""',
         display: 'block',
-        paddingBottom: `${(1 / ratio) * 100}%`,
+        paddingBottom: 'var(--ratio, 1)',
       },
-      '& > *': {
-        width: '100%',
-        height: '100%',
+      _children: {
+        width: 'full',
+        height: 'full',
         position: 'absolute',
         inset: 0,
       },
