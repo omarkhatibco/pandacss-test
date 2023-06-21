@@ -197,7 +197,7 @@ type PropertyValueTypes  = {
 	stroke: Tokens["colors"];
 	srOnly: boolean;
 	debug: boolean;
-	colorPalette: "rose" | "pink" | "fuchsia" | "purple" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "green" | "lime" | "yellow" | "orange" | "red" | "gray" | "slate";
+	colorPalette: "tonal.primary" | "tonal.secondary" | "tonal.tertiary" | "tonal.error" | "tonal.neutral" | "tonal.neutralVariant" | "primary" | "primary.fixed" | "secondary" | "secondary.fixed" | "tertiary" | "tertiary.fixed" | "error" | "on" | "on.primary" | "on.primary.fixed" | "on.secondary" | "on.secondary.fixed" | "on.tertiary" | "on.tertiary.fixed" | "on.error" | "on.surface" | "surface" | "surface.container" | "inverse" | "inverse.on" | "outline";
 	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
 }
 

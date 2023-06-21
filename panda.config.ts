@@ -1,5 +1,7 @@
 import { defineConfig } from '@pandacss/dev';
 import { patterns } from './patterns';
+import { colors, semanticColors } from './colors';
+import { shadows } from './shadows';
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,7 +17,13 @@ export default defineConfig({
 
   jsxFramework: 'react',
   theme: {
-    extend: {},
+    tokens: {
+      colors,
+    },
+    semanticTokens: {
+      colors: semanticColors,
+      shadows,
+    },
   },
   patterns: {
     extend: {
