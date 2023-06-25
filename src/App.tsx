@@ -1,39 +1,25 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import { AspectRatio, Box, Divider } from '../styled-system/jsx';
+import { AspectRatio, Divider } from '../styled-system/jsx';
+import { button } from '../styled-system/recipes';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <AspectRatio ratio={1 / 2}>
         <img loading='lazy' src='https://picsum.photos/seed/tech/600/400' />
       </AspectRatio>
-      <Box as='article'>test Panda css</Box>
-      <Divider color={'red.500'} />
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* <Box as='article'>test Panda css</Box> */}
+      <Divider color={'tonal.secondary.10'} />
+
+      <button className={button()}>test</button>
+      <button
+        className={button({
+          visual: 'edgy',
+          size: 'lg',
+          shape: 'square',
+        })}
+      >
+        test
+      </button>
     </>
   );
 }

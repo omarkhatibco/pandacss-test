@@ -1,5 +1,6 @@
 import { defineConfig } from '@pandacss/dev';
-import { patterns } from './patterns';
+// import { patterns } from './patterns';
+import { recipes } from './recipes';
 import { colors, semanticColors } from './colors';
 import { shadows } from './shadows';
 
@@ -24,12 +25,13 @@ export default defineConfig({
       colors: semanticColors,
       shadows,
     },
+    recipes,
   },
-  patterns: {
-    extend: {
-      // ...patterns,
-    },
-  },
+  // patterns: {
+  //   extend: {
+  //     // ...patterns,
+  //   },
+  // },
   conditions: {
     extend: {
       children: '&>*',
