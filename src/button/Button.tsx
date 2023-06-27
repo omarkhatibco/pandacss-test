@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { cva, cx } from '../../styled-system/css';
+import { styled } from '../../styled-system/jsx';
 
 export const buttonStyle = cva({
   base: {
@@ -8,15 +9,25 @@ export const buttonStyle = cva({
       position: 'absolute',
       inset: '0',
     },
+    // THIS WORK HERE
+    // _hover: {
+    //   '& .__stateLayer': {
+    //     opacity: '0.8',
+    //   },
+    // },
 
     '& .__stateLayer': {
       opacity: {
+        // THIS DOES NOT WORK
         base: '0',
         // _hover: '0.8',
         _groupHover: '0.8',
         _groupFocusVisible: '0.90',
         _groupActive: '0.95',
       },
+      // _groupHover: {
+      //   opacity: '0.8',
+      // },
       bg: 'transparent',
     },
   },
@@ -45,7 +56,13 @@ export const Button: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <button className={cx('group', classes)}>
       <span className='__label'>{children}</span>
-      <span className='__stateLayer' />
+      <styled.span
+        className='__stateLayer'
+        // THIS ALSO WORKS
+        // _groupHover={{
+        //   opacity: '0.8',
+        // }}
+      />
     </button>
   );
 };
