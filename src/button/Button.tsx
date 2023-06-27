@@ -33,9 +33,6 @@ export const buttonStyle = cva({
           bg: 'primary',
         },
       },
-      text: {},
-      elevated: {},
-      tonal: {},
     },
   },
   defaultVariants: {
