@@ -1,32 +1,39 @@
 import { defineRecipe } from '@pandacss/dev';
 
-export const buttonRecipe = defineRecipe({
-  name: 'button',
-  description: 'The styles for the Button component',
+export const cardRoot = defineRecipe({
+  name: 'cardRoot',
+  jsx: ['CardRoot'],
   base: {
-    display: 'flex',
+    pos: 'relative',
+    w: 'full',
+    overflow: 'hidden',
+    rounded: 'xl',
+    withTransition: true,
   },
   variants: {
-    visual: {
-      funky: { bg: 'red.200', color: 'white' },
-      edgy: { border: '1px solid {colors.red.500}' },
-    },
-    size: {
-      sm: { padding: '4', fontSize: '12px' },
-      lg: { padding: '8', fontSize: '40px' },
-    },
-    shape: {
-      square: { borderRadius: '0' },
-      circle: { borderRadius: 'full' },
+    variant: {
+      outlined: {
+        borderWidth: '1px',
+        borderColor: 'outline.variant',
+      },
+      elevated: {
+        bgColor: 'surface.container.low',
+        shadow: 'e1',
+
+        '&:hover:has(.__actionArea)': {
+          shadow: 'e3',
+        },
+      },
+      filled: {
+        bgColor: 'surface.container.highest',
+      },
     },
   },
   defaultVariants: {
-    visual: 'funky',
-    size: 'sm',
-    shape: 'circle',
+    variant: 'outlined',
   },
 });
 
 export const recipes = {
-  buttonRecipe,
+  cardRoot,
 };

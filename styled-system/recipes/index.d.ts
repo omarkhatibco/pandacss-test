@@ -1,2 +1,2 @@
 /* eslint-disable */
-export * from './button-recipe'
+export * from './card-root'
