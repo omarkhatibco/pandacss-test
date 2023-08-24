@@ -89,7 +89,6 @@ export type Conditions = {
 	"_scrollbarTrack": string
 	"_horizontal": string
 	"_vertical": string
-	"_children": string
 	"sm": string
 	"smOnly": string
 	"smDown": string

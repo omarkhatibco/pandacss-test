@@ -1,8 +1,9 @@
 import { defineConfig } from '@pandacss/dev';
 // import { patterns } from './patterns';
 // import { recipes } from './recipes';
-import { colors, semanticColors } from './colors';
-import { shadows } from './shadows';
+// import { colors, semanticColors } from './colors';
+// import { shadows } from './shadows';
+import { textStyles } from './typography';
 
 export default defineConfig({
   // Whether to use css reset
@@ -18,13 +19,14 @@ export default defineConfig({
 
   jsxFramework: 'react',
   theme: {
-    tokens: {
-      colors,
-    },
-    semanticTokens: {
-      colors: semanticColors,
-      shadows,
-    },
+    // tokens: {
+    //   colors,
+    // },
+    textStyles,
+    // semanticTokens: {
+    //   colors: semanticColors,
+    //   shadows,
+    // },
     // recipes,
   },
   // patterns: {
@@ -32,11 +34,11 @@ export default defineConfig({
   //     // ...patterns,
   //   },
   // },
-  conditions: {
-    extend: {
-      children: '&>*',
-    },
-  },
+  // conditions: {
+  //   extend: {
+  //     children: '&>*',
+  //   },
+  // },
 
   // The output directory for your css system
   outdir: 'styled-system',

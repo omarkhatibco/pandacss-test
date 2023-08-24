@@ -125,10 +125,12 @@ type PropertyValueTypes  = {
 	borderLeft: Tokens["borders"];
 	borderLeftColor: Tokens["colors"];
 	borderInlineStart: Tokens["borders"];
+	borderInlineStartWidth: Tokens["borderWidths"];
 	borderInlineStartColor: Tokens["colors"];
 	borderRight: Tokens["borders"];
 	borderRightColor: Tokens["colors"];
 	borderInlineEnd: Tokens["borders"];
+	borderInlineEndWidth: Tokens["borderWidths"];
 	borderInlineEndColor: Tokens["colors"];
 	borderTop: Tokens["borders"];
 	borderTopColor: Tokens["colors"];
@@ -138,6 +140,7 @@ type PropertyValueTypes  = {
 	borderBlockEndColor: Tokens["colors"];
 	borderBlockStart: Tokens["borders"];
 	borderBlockStartColor: Tokens["colors"];
+	opacity: Tokens["opacity"];
 	boxShadow: Tokens["shadows"];
 	boxShadowColor: Tokens["colors"];
 	filter: "auto";
@@ -153,6 +156,7 @@ type PropertyValueTypes  = {
 	transitionDuration: Tokens["durations"];
 	transition: "all" | "common" | "background" | "colors" | "opacity" | "shadow" | "transform";
 	animation: Tokens["animations"];
+	animationName: Tokens["animationName"];
 	animationDelay: Tokens["durations"];
 	scale: "auto" | CssProperties["scale"];
 	translate: "auto" | CssProperties["translate"];
@@ -198,8 +202,8 @@ type PropertyValueTypes  = {
 	stroke: Tokens["colors"];
 	srOnly: boolean;
 	debug: boolean;
-	colorPalette: "tonal.primary" | "tonal.secondary" | "tonal.tertiary" | "tonal.error" | "tonal.neutral" | "tonal.neutralVariant" | "primary" | "primary.fixed" | "secondary" | "secondary.fixed" | "tertiary" | "tertiary.fixed" | "error" | "on" | "on.primary" | "on.primary.fixed" | "on.secondary" | "on.secondary.fixed" | "on.tertiary" | "on.tertiary.fixed" | "on.error" | "on.surface" | "surface" | "surface.container" | "inverse" | "inverse.on" | "outline";
-	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+	colorPalette: "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate";
+	textStyle: "display.lg" | "display.md" | "display.sm" | "headline.lg" | "headline.md" | "headline.sm" | "title.lg" | "title.md" | "title.sm" | "label.lg" | "label.md" | "label.sm" | "body.lg" | "body.md" | "body.sm";
 }
 
 
@@ -287,8 +291,10 @@ type PropertyValueTypes  = {
 	borderYWidth: Shorthand<"borderBlockWidth">;
 	borderYColor: Shorthand<"borderBlockColor">;
 	borderStart: Shorthand<"borderInlineStart">;
+	borderStartWidth: Shorthand<"borderInlineStartWidth">;
 	borderStartColor: Shorthand<"borderInlineStartColor">;
 	borderEnd: Shorthand<"borderInlineEnd">;
+	borderEndWidth: Shorthand<"borderInlineEndWidth">;
 	borderEndColor: Shorthand<"borderInlineEndColor">;
 	shadow: Shorthand<"boxShadow">;
 	shadowColor: Shorthand<"boxShadowColor">;
@@ -297,7 +303,7 @@ type PropertyValueTypes  = {
 }
 
 export type PropertyValue<T extends string> = T extends keyof PropertyTypes
-  ? ConditionalValue<PropertyTypes[T] | CssValue<T>>
+  ? ConditionalValue<PropertyTypes[T] | CssValue<T> | (string & {})>
   : T extends keyof CssProperties
-  ? ConditionalValue<CssProperties[T]>
+  ? ConditionalValue<CssProperties[T] | (string & {})>
   : ConditionalValue<string | number>
