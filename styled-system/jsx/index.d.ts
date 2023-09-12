@@ -24,4 +24,4 @@ export * from './float';
 export * from './bleed';
 export * from './visually-hidden';
 
-export type { HTMLStyledProps } from '../types/jsx';
+export type { HTMLStyledProps, StyledComponent } from '../types/jsx';

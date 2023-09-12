@@ -3,7 +3,6 @@ import { defineConfig } from '@pandacss/dev';
 // import { recipes } from './recipes';
 // import { colors, semanticColors } from './colors';
 // import { shadows } from './shadows';
-import { textStyles } from './typography';
 
 export default defineConfig({
   // Whether to use css reset
@@ -22,7 +21,7 @@ export default defineConfig({
     // tokens: {
     //   colors,
     // },
-    textStyles,
+    // textStyles,
     // semanticTokens: {
     //   colors: semanticColors,
     //   shadows,

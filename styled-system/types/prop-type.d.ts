@@ -203,7 +203,7 @@ type PropertyValueTypes  = {
 	srOnly: boolean;
 	debug: boolean;
 	colorPalette: "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate";
-	textStyle: "display.lg" | "display.md" | "display.sm" | "headline.lg" | "headline.md" | "headline.sm" | "title.lg" | "title.md" | "title.sm" | "label.lg" | "label.md" | "label.sm" | "body.lg" | "body.md" | "body.sm";
+	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
 }
 
 
